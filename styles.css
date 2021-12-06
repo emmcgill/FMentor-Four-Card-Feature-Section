@@ -1,0 +1,58 @@
+:root {
+    --clr-primary-red: hsl(0, 78%, 62%);
+    --clr-primary-cyan: hsl(180, 62%, 55%);
+    --clr-primary-orange: hsl(34, 97%, 64%);
+    --clr-primary-blue:hsl(212, 86%, 64%);
+    --clr-neu-dark-blue: hsl(234, 12%, 34%);
+    --clr-neu-grayish-blue: hsl(229, 6%, 66%);
+    --clr-neu-light-gray:hsl(0, 0%, 98%);
+
+    --fs-15px: 15px;
+
+    --ff-Poppins: 'Poppins', sans-serif;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-size: var(--fs-15px);
+    font-family: var(--ff-Poppins);
+    background-color: var(--clr-neu-light-gray);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tools-container {
+    display: grid;
+    width: 85%;
+    max-width: 375px;
+    gap: 2rem;
+}
+
+.tools-container > .card {
+    background: #fff;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+}
+
+.tools-container > .supervisor {
+    border-top: 3px solid var(--clr-primary-cyan);
+}
+
+.tools-container > .team-builder {
+    border-top: 3px solid var(--clr-primary-red);
+}
+
+.tools-container > .karma {
+    border-top: 3px solid var(--clr-primary-orange);
+}
+
+.tools-container > .calculator {
+    border-top: 3px solid var(--clr-primary-blue);
+}
+
