@@ -21,38 +21,119 @@ body {
     font-size: var(--fs-15px);
     font-family: var(--ff-Poppins);
     background-color: var(--clr-neu-light-gray);
+}
+
+main {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    padding: 3.5rem 1.75rem;
 }
 
-.tools-container {
+main > .title-container {
+    text-align: center;
+    color: var(--clr-neu-grayish-blue);
+}
+
+main > .title-container > .title {
+    font-weight: 300;
+    font-size: 1.5rem;
+}
+
+main > .title-container > .title strong {
+    display: block;
+    font-weight: 700;
+    margin-bottom: .75rem;
+    color: var(--clr-neu-dark-blue);
+}
+
+main > .title-container > .sub-title {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.5rem;
+    margin-bottom: 3.5rem;
+    max-width: 353px;
+}
+
+main > .tools-container {
     display: grid;
-    width: 85%;
+    width: 100%;
     max-width: 375px;
     gap: 2rem;
+    justify-content: center;
 }
 
-.tools-container > .card {
+main > .tools-container > .card {
     background: #fff;
     border-radius: 5px;
-    padding: 1rem 2rem;
+    padding: 1.5rem 2rem;
+    color: var(--clr-neu-grayish-blue);
+    font-size: .9rem;
+    font-weight: 300;
+    max-width: 311px;
+    box-shadow: 0px 9px 15px 1px #d2d2d2;
 }
 
-.tools-container > .supervisor {
+main > .tools-container > .card > .top > .card-title {
+    color: var(--clr-neu-dark-blue);
+    margin-bottom: .25rem;
+}
+main > .tools-container > .supervisor {
     border-top: 3px solid var(--clr-primary-cyan);
 }
 
-.tools-container > .team-builder {
+main > .tools-container > .team-builder {
     border-top: 3px solid var(--clr-primary-red);
 }
 
-.tools-container > .karma {
+main > .tools-container > .karma {
     border-top: 3px solid var(--clr-primary-orange);
 }
 
-.tools-container > .calculator {
+main > .tools-container > .calculator {
     border-top: 3px solid var(--clr-primary-blue);
+}
+
+main > .tools-container > .card > .bottom {
+    display: flex;
+    justify-content: right;
+    margin-top: 2.25rem;
+}
+
+@media(min-width: 800px) {
+
+    main > .title-container > .title {
+        font-size: 2rem;
+    }
+
+    main > .title-container > .sub-title {
+        max-width: 500px;
+        margin-bottom: 2.75rem;
+    }
+
+    main > .tools-container {
+        grid-template-areas: 
+        ". . builder builder . ."
+        "supervisor supervisor builder builder calc calc"
+        "supervisor supervisor karma karma calc calc"
+        ". . karma karma . .";
+        max-width: 1000px;
+    }
+
+    main > .tools-container > .supervisor {
+        grid-area: supervisor;
+    }
+    
+    main > .tools-container > .team-builder {
+        grid-area: builder;
+    }
+    
+    main > .tools-container > .karma {
+        grid-area: karma;
+    }
+    
+    main > .tools-container > .calculator {
+        grid-area: calc;
+    }
 }
 
